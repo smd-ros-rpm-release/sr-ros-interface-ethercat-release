@@ -1,0 +1,12 @@
+Source: ros-hydro-sr-robot-lib
+Section: misc
+Priority: extra
+Maintainer: Shadow Robot's software team <software@shadowrobot.com>
+Build-Depends: debhelper (>= 7.0.50~), ros-hydro-catkin, ros-hydro-diagnostic-updater, ros-hydro-pr2-mechanism-msgs, ros-hydro-realtime-tools, ros-hydro-roscpp, ros-hydro-rostest, ros-hydro-sr-external-dependencies, ros-hydro-sr-hardware-interface, ros-hydro-sr-robot-msgs, ros-hydro-sr-self-test, ros-hydro-sr-utilities, ros-hydro-std-srvs
+Homepage: http://ros.org/wiki/sr_robot_lib
+Standards-Version: 3.9.2
+
+Package: ros-hydro-sr-robot-lib
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-diagnostic-updater, ros-hydro-pr2-mechanism-msgs, ros-hydro-realtime-tools, ros-hydro-roscpp, ros-hydro-rospy, ros-hydro-sr-ethercat-hand-config, ros-hydro-sr-external-dependencies, ros-hydro-sr-hardware-interface, ros-hydro-sr-robot-msgs, ros-hydro-sr-self-test, ros-hydro-sr-utilities, ros-hydro-std-srvs
+Description: sr_robot_lib contains the robot library used in the sr_edc_ethercat_drivers. The library is used to store the incoming etherCAT messages in an easy to access format, and prepare the messages to be send through etherCAT.

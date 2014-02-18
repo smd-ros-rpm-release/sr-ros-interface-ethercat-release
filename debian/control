@@ -1,0 +1,12 @@
+Source: ros-hydro-sr-edc-launch
+Section: misc
+Priority: extra
+Maintainer: Shadow Robot's software team <software@shadowrobot.com>
+Build-Depends: debhelper (>= 7.0.50~), ros-hydro-catkin
+Homepage: http://ros.org/wiki/sr_edc_launch
+Standards-Version: 3.9.2
+
+Package: ros-hydro-sr-edc-launch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-convex-decomposition, ros-hydro-diagnostic-aggregator, ros-hydro-diagnostic-msgs, ros-hydro-diagnostic-updater, ros-hydro-ivcon, ros-hydro-pr2-bringup, ros-hydro-pr2-ethercat, ros-hydro-robot-mechanism-controllers, ros-hydro-roscpp, ros-hydro-self-test, ros-hydro-sr-description, ros-hydro-sr-ethercat-hand-config, ros-hydro-urdf, ros-hydro-xacro
+Description: Package with launch files to start the needed nodes for the Shadow Robot EtherCAT hand.

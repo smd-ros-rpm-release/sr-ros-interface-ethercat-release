@@ -1,0 +1,12 @@
+Source: ros-hydro-shadow-robot-ethercat
+Section: misc
+Priority: extra
+Maintainer: Shadow Robot's software team <software@shadowrobot.com>
+Build-Depends: debhelper (>= 7.0.50~), ros-hydro-catkin
+Homepage: http://ros.org/wiki/shadow_robot_ethercat
+Standards-Version: 3.9.2
+
+Package: ros-hydro-shadow-robot-ethercat
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-sr-edc-controller-configuration, ros-hydro-sr-edc-ethercat-drivers, ros-hydro-sr-edc-launch, ros-hydro-sr-edc-muscle-tools, ros-hydro-sr-external-dependencies, ros-hydro-sr-robot-lib
+Description: This stack contains the drivers and the controllers for Shadow Robot's EtherCAT Hand.

@@ -1,3 +1,29 @@
+## shadow_robot_ethercat (indigo) - 1.3.3-0
+
+The packages in the `shadow_robot_ethercat` repository were released into the `indigo` distro by running `/usr/bin/bloom-release --rosdistro indigo --track indigo shadow_robot_ethercat` on `Wed, 23 Jul 2014 12:04:28 -0000`
+
+These packages were released:
+- `shadow_robot_ethercat`
+- `sr_edc_controller_configuration`
+- `sr_edc_ethercat_drivers`
+- `sr_edc_launch`
+- `sr_edc_muscle_tools`
+- `sr_external_dependencies`
+- `sr_robot_lib`
+
+Version of package(s) in repository `shadow_robot_ethercat`:
+- rosdistro version: `1.3.2-0`
+- old version: `1.3.2-0`
+- new version: `1.3.3-0`
+
+Versions of tools used:
+- bloom version: `0.5.10`
+- catkin_pkg version: `0.2.4`
+- rosdep version: `0.10.28`
+- rosdistro version: `0.3.5`
+- vcstools version: `0.1.35`
+
+
 ## shadow_robot_ethercat (indigo) - 1.3.2-0
 
 The packages in the `shadow_robot_ethercat` repository were released into the `indigo` distro by running `/usr/bin/bloom-release --rosdistro indigo --track indigo shadow_robot_ethercat --new-track` on `Tue, 22 Jul 2014 16:03:55 -0000`

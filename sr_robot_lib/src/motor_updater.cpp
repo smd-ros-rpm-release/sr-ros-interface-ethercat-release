@@ -39,6 +39,11 @@ namespace generic_updater
   }
 
   template <class CommandType>
+  MotorUpdater<CommandType>::~MotorUpdater()
+  {
+  }
+
+  template <class CommandType>
   operation_mode::device_update_state::DeviceUpdateState MotorUpdater<CommandType>::build_init_command(CommandType* command)
   {
     if(!this->mutex->try_lock())

@@ -26,7 +26,7 @@
 #ifndef SR0X_H
 #define SR0X_H
 
-#include <ros_ethercat_hardware/ethercat_hardware.h>
+#include <ethercat_hardware/ethercat_device.h>
 #include <sr_edc_ethercat_drivers/motor_trace_buffer.h>
 
 
@@ -34,8 +34,11 @@
 class SR0X : public EthercatDevice
 {
 public:
-  virtual int initialize(hardware_interface::HardwareInterface *hw, bool allow_unprogrammed=true);
+  virtual void construct(EtherCAT_SlaveHandler *sh, int &start_address);
+  virtual int initialize(pr2_hardware_interface::HardwareInterface *hw, bool allow_unprogrammed=true);
 
+  SR0X();
+  virtual ~SR0X();
 protected:
   uint8_t fw_major_;
   uint8_t fw_minor_;
@@ -62,6 +65,10 @@ protected:
 
   string reason_;
   int level_;
+
+  int writeData(EthercatCom *com, EC_UINT address, void const *data, EC_UINT length);
+  int readData(EthercatCom *com, EC_UINT address, void *data, EC_UINT length);
+
   int device_offset_;      //!< Offset of device position from first device of Shadow Hand
 
 protected:

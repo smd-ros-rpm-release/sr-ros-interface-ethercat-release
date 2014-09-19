@@ -38,6 +38,11 @@ namespace generic_updater
   }
 
   template <class CommandType>
+  SensorUpdater<CommandType>::~SensorUpdater()
+  {
+  }
+
+  template <class CommandType>
   operation_mode::device_update_state::DeviceUpdateState SensorUpdater<CommandType>::build_init_command(CommandType* command)
   {
     if(!this->mutex->try_lock())

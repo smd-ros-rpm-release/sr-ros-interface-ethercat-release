@@ -42,7 +42,8 @@ namespace shadow_robot
   class SrMotorHandLib : public SrMotorRobotLib<StatusType, CommandType>
   {
   public:
-    SrMotorHandLib(hardware_interface::HardwareInterface *hw);
+    SrMotorHandLib(pr2_hardware_interface::HardwareInterface *hw);
+    ~SrMotorHandLib();
 
     /**
      * The service callback for setting the Force PID values. There's only one callback
@@ -79,7 +80,7 @@ namespace shadow_robot
      * at full speed in the debug topics.
      *
      * @param request Contains the motor index and the MOTOR_DATA type
-     * @param response True if succeeded.
+     * @param response True if succeedded.
      *
      * @return true if succeeded.
      */
@@ -94,9 +95,11 @@ namespace shadow_robot
      * @param joint_names A vector containing all the joint names.
      * @param actuator_ids A vector containing the corresponding actuator ids.
      * @param joint_to_sensors A vector mapping the joint to the sensor index we read from the palm.
+     * @param actuators A vector containing the actuators for the different joints.
      */
     virtual void initialize(std::vector<std::string> joint_names, std::vector<int> actuator_ids,
-                            std::vector<shadow_joints::JointToSensor> joint_to_sensors);
+                            std::vector<shadow_joints::JointToSensor> joint_to_sensors,
+                            std::vector<sr_actuator::SrGenericActuator*> actuators);
 
     /**
      * Updates the parameter values for the force control in the Parameter Server
@@ -139,6 +142,9 @@ namespace shadow_robot
     static const int nb_motor_data;
     static const char* human_readable_motor_data_types[];
     static const int32u motor_data_types[];
+
+    /// a service server for reconfiguring the debug data we want to publish
+    ros::ServiceServer debug_service;
 
     /**
      * Read the motor board force pids from the parameter servers,
